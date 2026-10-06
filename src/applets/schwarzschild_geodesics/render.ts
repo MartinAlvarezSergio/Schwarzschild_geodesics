@@ -20,7 +20,7 @@ const SLOT_NEWTON_STROKE = [
   "rgba(130, 95, 25, 0.55)",
   "rgba(75, 35, 115, 0.56)"
 ];
-const SLOT_GR_FILL = ["#ff6b6b", "#52e088", "#6ba3ff", "#ffe24a", "#c78bff"];
+export const SLOT_GR_FILL = ["#ff6b6b", "#52e088", "#6ba3ff", "#ffe24a", "#c78bff"];
 const SLOT_NEWTON_FILL = ["#9e3a3e", "#2a8f52", "#3d5c9e", "#8a6a1e", "#5c2d8a"];
 
 function slotColor(slotIndex: number, role: "grStroke" | "newtStroke" | "grFill" | "newtFill"): string {
@@ -87,10 +87,13 @@ export function renderSchwarzschildOrbit(
   ctx.font = "11px system-ui, sans-serif";
   ctx.fillStyle = "rgba(255, 120, 90, 0.7)";
   ctx.fillText("r = 2M", center.x + r2 + 6, center.y + 4);
+  // Centred above each ring: the stage's readouts panel covers the top-right corner.
+  ctx.textAlign = "center";
   ctx.fillStyle = "rgba(255, 200, 120, 0.75)";
-  ctx.fillText("3M", center.x + r3 + 4, center.y - r3 + 14);
+  ctx.fillText("3M", center.x, center.y - r3 - 5);
   ctx.fillStyle = "rgba(140, 200, 255, 0.7)";
-  ctx.fillText("6M (ISCO)", center.x + r6 + 4, center.y - r6 + 14);
+  ctx.fillText("6M (ISCO)", center.x, center.y - r6 - 5);
+  ctx.textAlign = "left";
 
   const holeR = r2 * 0.92;
   const hole = ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, holeR);

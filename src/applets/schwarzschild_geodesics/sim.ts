@@ -2,10 +2,11 @@ import { Vec2 } from "../../core/vector";
 import { energySquaredMassive, rhsMassiveGR, rhsNewtonian, rk4Step } from "./gr_physics";
 import { GeodesicState, SCHW_M, SchwarzschildSnapshot, TRAJECTORY_SLOT_COUNT } from "./types";
 
-const ORBIT_W = 900;
-const ORBIT_H = 620;
-const POT_W = 300;
-const POT_H = 220;
+/** Logical canvas sizes: the renderer and the drag-launch input work in these units. */
+export const ORBIT_W = 900;
+export const ORBIT_H = 620;
+export const POT_W = 300;
+export const POT_H = 220;
 /** Default orbit view scale (pixels per geometric unit M). Higher = more zoomed in. */
 export const ORBIT_PIXELS_PER_M_DEFAULT = 38;
 /** Lower px/M = zoom out (see much larger radii on the canvas). */

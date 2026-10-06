@@ -1,0 +1,26 @@
+/* Schwarzschild geodesics on the applet stage (scoped by AppletStage rootClassName="schw-stage"). */
+
+/* Five per-particle lines ("P1 (R)  r=… L=… E²=…") need a little more room than the default readouts. */
+.schw-stage .stage-readouts {
+  max-width: 320px;
+}
+
+.schw-stage .schw-frozen {
+  color: rgba(235, 232, 226, 0.7);
+  white-space: nowrap;
+}
+
+/* The hint wraps at the width of the particle lines instead of widening the panel. */
+.schw-stage .schw-guided-hint {
+  width: 0;
+  min-width: 100%;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.76rem;
+  color: #9fd0ff;
+}
+
+.schw-stage .schw-guided-hint:empty {
+  display: none;
+}
